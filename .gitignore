@@ -1,0 +1,4 @@
+# Local settings and editor noise are not part of the plugin.
+settings.json
+*.bak
+.DS_Store

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "irmatt.screen-zoom",
+  "name": "Screen Zoom",
+  "version": "1.0.0",
+  "author": "irmatt",
+  "license": "MIT",
+  "description": "macOS-style screen magnification. Hold Super and pinch with two fingers on the trackpad to zoom in and out, with the image following the pointer continuously; hold Super to zoom is available as an alternate mode.",
+  "kinds": [
+    "panel"
+  ],
+  "keepLoaded": true,
+  "entryPoints": {
+    "panel": "ScreenZoom.qml"
+  }
+}
