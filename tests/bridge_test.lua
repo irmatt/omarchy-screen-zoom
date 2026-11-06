@@ -36,14 +36,9 @@ local function markerFor(pid, age)
   writeFile(marker, tostring(pid) .. ":" .. tostring(os.time() - (age or 0)))
 end
 
--- Marker has to name a live process. Use this test's PID: the shell that
--- io.popen starts reports its parent, which is this Lua process.
-local pid = nil
-do
-  local handle = io.popen("echo $PPID")
-  if handle then pid = handle:read("*l"); handle:close() end
-end
-assert(pid and pid:match("^%d+$"), "could not determine test pid")
+-- The heartbeat only requires a live PID; PID 1 is always alive and keeps the
+-- test independent of shell helpers.
+local pid = "1"
 
 local function merge(dst, src)
   for k, v in pairs(src) do
